@@ -1,0 +1,81 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap");
+
+$text: hsl(226, 64%, 88%);
+$bg: hsl(240, 21%, 15%);
+$accent-1: hsl(23, 92%, 75%);
+$accent-2: hsl(115, 54%, 76%);
+$font-stack: Poppins, "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: $font-stack;
+}
+
+button {
+  all: unset;
+}
+
+body {
+  display: flex;
+}
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  padding: 4rem 2rem;
+  height: 100vh;
+  width: 15rem;
+  background-color: $bg;
+  color: $text;
+
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  ul:first-of-type {
+    margin: auto 0;
+  }
+
+  li {
+    list-style-type: none;
+  }
+}
+
+header {
+  width: 100vw;
+  #search {
+    display: flex;
+    justify-content: space-around;
+
+    #search__bar {
+      width: 50vw;
+      height: 20px;
+      border-radius: 999px;
+      background-color: $accent-1;
+      margin: 1rem;
+      padding: 1rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      .search-icon {
+        margin: 0 auto 0 0;
+        color: $bg;
+      }
+    }
+
+    div:last-child {
+      display: flex;
+      align-items: center;
+      gap: 1rem ;
+    }
+  }
+
+  #user__detail {
+    display: flex;
+    
+  }
+
+}
