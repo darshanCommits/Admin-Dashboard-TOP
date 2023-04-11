@@ -16,18 +16,21 @@ $font-stack: Poppins, "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 button {
   all: unset;
   margin: 0.5rem;
-  background-color: $accent-2;
+  background-color: $accent-1;
   padding: 0 1rem;
   border-radius: 999px;
   height: 2rem;
+  cursor: pointer;
+  color: $bg;
 }
 
 body {
   display: grid;
-  grid-template-columns: 15rem 1fr 15rem;
+  grid-template-columns: 15rem 1fr 1fr;
   grid-template-areas:
     "sidebar header header"
     "sidebar main announcements";
+  background-color: hsla(226, 64%, 88%, 50%);
 }
 
 #left {
@@ -41,8 +44,9 @@ body {
   padding: 4rem 2rem;
   height: 100vh;
   width: 15rem;
-  background-color: $bg;
-  color: $text;
+  background-color: $accent-1;
+  color: $bg;
+  box-shadow: 10px 10px 10px transparent;
 
   h1 {
     font-size: 1.5rem;
@@ -60,7 +64,8 @@ body {
 header {
   grid-area: header;
   height: 10rem;
-  background-color: green;
+  background-color: $bg;
+  color: $accent-2;
 
   #search {
     display: flex;
@@ -70,12 +75,14 @@ header {
       width: 50vw;
       height: 20px;
       border-radius: 999px;
-      background-color: $accent-1;
+      background-color: $text;
       margin: 1rem;
       padding: 1rem;
       display: flex;
       justify-content: center;
       align-items: center;
+      box-shadow: 0 0 10px transparent;
+      cursor: pointer;
 
       .search-icon {
         margin: 0 auto 0 0;
@@ -97,6 +104,7 @@ header {
     > div {
       display: flex;
       justify-content: left;
+      align-items: center;
     }
 
     img {
@@ -116,7 +124,8 @@ main {
   grid-area: main;
 
   h1 {
-    margin: 1rem 2rem 0 ;
+    margin: 1rem 0 0 2rem;
+    // font-size: 1.5rem;
   }
 
   .container {
@@ -126,29 +135,71 @@ main {
     gap: 1rem;
     padding: 2rem;
 
+    &:hover > div {
+      opacity: 0.5;
+    }
+
     > div {
       width: 23rem;
       padding: 1rem;
-      background-color: rgba(0, 128, 0, 0.534);
+      border-radius: 9px;
+      background-color: $text;
+      box-shadow: 0 0 5px $text;
+
+      &:hover {
+        opacity: 1;
+        transform: scale(1.1);
+        transition: all 0.3s;
+      }
     }
   }
 }
 
 #right {
-  grid-template-area: announcements;
-  position: inherit;
+  grid-area: announcements;
+  position: relative;
+  overflow: auto;
+  max-height: 300px;
+  //   grid-column: 3 /  4;
+
+  > div {
+    position: fixed;
+  }
 
   section {
-    margin: 1rem 0;
-    background-color: $bg;
-    color: $text;
+    margin: 0.5rem 0;
+    // background-color: $bg;
+    border: 1px solid red;
+    // color: $text;
 
-    h4 {
-        font-size: .8rem;
+    > div {
+      border: 1px solid black;
     }
 
-    p {
-        font-size: .5rem;
+    div > div {
+      padding: 0 1rem;
+      margin: 0.5rem 0;
+    }
+
+    h3 {
+      margin-bottom: 1rem;
+    }
+
+    hr {
+      height: 1px;
+      border: none;
+      background-color: $text;
+      width: 80%;
+      margin: 0 auto;
     }
   }
+}
+
+h4 {
+  font-size: 0.8rem;
+}
+
+p {
+  font-size: 0.7rem;
+  width: 90%;
 }
