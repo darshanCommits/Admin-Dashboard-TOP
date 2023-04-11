@@ -15,17 +15,31 @@ $font-stack: Poppins, "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 
 button {
   all: unset;
+  margin: 0.5rem;
+  background-color: $accent-2;
+  padding: 0 1rem;
+  border-radius: 999px;
+  height: 2rem;
 }
 
 body {
-  display: flex;
+  display: grid;
+  grid-template-columns: 15rem 1fr;
+  grid-template-rows: auto auto;
+  grid-template-areas:
+    "sidebar header"
+    "sidebar main";
+}
+
+aside {
+  grid-area: sidebar;
 }
 
 .sidebar {
   display: flex;
   flex-direction: column;
   padding: 4rem 2rem;
-  height: 100vh;
+  min-height: 100vh;
   width: 15rem;
   background-color: $bg;
   color: $text;
@@ -44,7 +58,10 @@ body {
 }
 
 header {
-  width: 100vw;
+  grid-area: header;
+  height: 10rem;
+  background-color: green;
+
   #search {
     display: flex;
     justify-content: space-around;
@@ -69,13 +86,34 @@ header {
     div:last-child {
       display: flex;
       align-items: center;
-      gap: 1rem ;
+      gap: 1rem;
     }
   }
 
   #user__detail {
     display: flex;
-    
-  }
+    justify-content: space-between;
 
+    > div {
+      display: flex;
+      justify-content: left;
+    }
+
+    img {
+      margin: 0 1rem 0 4rem;
+      width: 8%;
+      aspect-ratio: 1;
+      border-radius: 50%;
+    }
+
+    h1 {
+      font-size: 1.5rem;
+    }
+  }
+}
+
+main {
+  grid-area: main;
+  display: grid;
+  
 }
