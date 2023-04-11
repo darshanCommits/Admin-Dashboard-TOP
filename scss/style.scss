@@ -6,20 +6,8 @@ $accent-1: hsl(23, 92%, 75%);
 $accent-2: hsl(115, 54%, 76%);
 $font-stack: Poppins, "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 
-
-li svg {
-    // margin: 0 1rem;
-    padding-right: 1rem;
-}
-svg {
-    padding-right: 1rem;
-}
-
-li {
-    text-align: left;
-}
-
 * {
+  transition: all 0.3s;
   box-sizing: border-box;
   padding: 0;
   margin: 0;
@@ -35,6 +23,17 @@ button {
   height: 2rem;
   cursor: pointer;
   color: $bg;
+}
+
+li svg {
+  padding-right: 1rem;
+}
+svg {
+  padding-right: 1rem;
+}
+
+li {
+  text-align: left;
 }
 
 body {
@@ -61,9 +60,9 @@ body {
   color: $bg;
   box-shadow: 0 0 10px transparent;
 
-    div {
-        display: flex;
-    }
+  div {
+    display: flex;
+  }
 
   h1 {
     font-size: 1.5rem;
@@ -78,11 +77,11 @@ body {
     cursor: pointer;
 
     &:hover {
-        transform: scale(1.1);
+      transform: scale(1.1);
     }
 
     &:active {
-        transform: scale(1);
+      transform: scale(1);
     }
   }
 }
@@ -135,11 +134,10 @@ header {
       justify-content: left;
       align-items: center;
       margin-left: 3rem;
-
     }
 
     a {
-        color: $accent-1;
+      color: $accent-1;
     }
 
     h1 {
@@ -153,7 +151,6 @@ main {
 
   h1 {
     margin: 1rem 0 0 2rem;
-    // font-size: 1.5rem;
   }
 
   .container {
@@ -178,33 +175,23 @@ main {
       &:hover {
         opacity: 1;
         transform: scale(1.1) translateX(1rem) translateY(-1rem);
-        transition: all 0.3s;
+        box-shadow: none;
       }
 
       &:active {
         transform: scale(1) translateX(0) translateY(0);
-        
       }
-
     }
   }
 }
 
 #right {
   grid-area: announcements;
-  //   position: relative;
   overflow: visible;
   max-height: 300px;
-  //   grid-column: 3 /  4;
-
-  > div {
-    // position: fixed;
-  }
 
   section {
     margin: 0.5rem 0;
-    // background-color: $bg;
-    // color: $text;
 
     > div {
       background-color: $bg;
